@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For BABI — 7 Months</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #08070b;
+    color: #f8f1f4;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(177, 112, 150, .12), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(116, 93, 145, .12), transparent 30%);
+    z-index: -2;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: .4;
+    animation: twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%,100% { opacity: .15; transform: scale(1); }
+    50% { opacity: .8; transform: scale(1.8); }
+}
+
+/* ---------- NAV ---------- */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(8,7,11,.45);
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.nav-heart {
+    font-size: 14px;
+    color: #d8a9c1;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 25px 80px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-size: 11px;
+    color: #c9a5b8;
+    margin-bottom: 28px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(90px, 18vw, 210px);
+    font-weight: 300;
+    line-height: .75;
+    letter-spacing: -5px;
+    background: linear-gradient(135deg, #fff, #d9b4c8, #aa829a);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    margin-top: 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(25px, 4vw, 42px);
+    font-weight: 300;
+}
+
+.hero-description {
+    max-width: 570px;
+    margin: 25px auto;
+    color: #aaa2aa;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.scroll {
+    margin-top: 55px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #807681;
+}
+
+.scroll span {
+    display: block;
+    margin-top: 15px;
+    font-size: 18px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- SECTIONS ---------- */
+
+section {
+    padding: 130px 8%;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 10px;
+    color: #a98b9b;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-size: clamp(42px, 7vw, 75px);
+    line-height: 1;
+    margin-bottom: 60px;
+}
+
+/* ---------- LOVE LETTER ---------- */
+
+.letter-section {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.letter-card {
+    position: relative;
+    padding: clamp(35px, 7vw, 80px);
+    border: 1px solid rgba(255,255,255,.1);
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.015)
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 5px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.35);
+}
+
+.letter-card::before {
+    content: "“";
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 100px;
+    color: rgba(214,167,190,.2);
+}
+
+.letter {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.7;
+    color: #e8dfe4;
+}
+
+.signature {
+    margin-top: 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    color: #c9a5b8;
+}
+
+/* ---------- COUNTER ---------- */
+
+.counter-section {
+    text-align: center;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    gap: clamp(20px, 7vw, 80px);
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.counter-item {
+    min-width: 100px;
+}
+
+.number {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 65px;
+    font-weight: 300;
+}
+
+.counter-item p {
+    color: #817983;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 9px;
+}
+
+/* ---------- MEMORIES ---------- */
+
+.memories {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.memory {
+    height: 380px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    background:
+        linear-gradient(135deg, #32252e, #17131a);
+    border: 1px solid rgba(255,255,255,.08);
+    transition: .5s;
+}
+
+.memory:hover {
+    transform: translateY(-10px);
+}
+
+.memory:nth-child(2) {
+    transform: translateY(50px);
+}
+
+.memory:nth-child(2):hover {
+    transform: translateY(40px);
+}
+
+.memory-content {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+
+.memory-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #b99aaa;
+}
+
+.memory h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 7px;
+}
+
+/* ---------- REASONS ---------- */
+
+.reasons {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.reason {
+    min-height: 230px;
+    padding: 35px;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.025);
+    transition: .4s;
+}
+
+.reason:hover {
+    background: rgba(255,255,255,.06);
+    transform: translateY(-6px);
+}
+
+.reason span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    color: #bc96a9;
+}
+
+.reason h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin: 25px 0 12px;
+}
+
+.reason p {
+    color: #969098;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ---------- FINAL ---------- */
+
+.final {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.final-content {
+    max-width: 800px;
+}
+
+.final h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 9vw, 110px);
+    font-weight: 300;
+    line-height: .95;
+}
+
+.final p {
+    margin: 35px auto;
+    max-width: 500px;
+    color: #aaa2aa;
+    line-height: 1.8;
+}
+
+.love-button {
+    display: inline-block;
+    padding: 16px 35px;
+    border: 1px solid #c39aae;
+    color: #f5e8ee;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+.love-button:hover {
+    background: #d0a9bc;
+    color: #100b10;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,.06);
+    color: #6f6870;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width: 750px) {
+
+    nav {
+        padding: 18px 6%;
+    }
+
+    section {
+        padding: 90px 6%;
+    }
+
+    .memory-grid,
+    .reason-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory {
+        height: 330px;
+    }
+
+    .memory:nth-child(2) {
+        transform: none;
+    }
+
+    .memory:nth-child(2):hover {
+        transform: translateY(-10px);
+    }
+
+    .counter {
+        gap: 35px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- STARS -->
+<div class="stars">
+
+<div class="star" style="top:12%;left:18%;animation-delay:1s;"></div>
+<div class="star" style="top:22%;left:76%;animation-delay:2s;"></div>
+<div class="star" style="top:35%;left:43%;animation-delay:.5s;"></div>
+<div class="star" style="top:48%;left:90%;animation-delay:3s;"></div>
+<div class="star" style="top:62%;left:12%;animation-delay:1.5s;"></div>
+<div class="star" style="top:76%;left:65%;animation-delay:2.5s;"></div>
+<div class="star" style="top:88%;left:32%;animation-delay:1s;"></div>
+<div class="star" style="top:17%;left:55%;animation-delay:3s;"></div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="logo">BABI ♡</div>
+
+<div class="nav-heart">
+7 MONTHS
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+A little place on the internet
+</div>
+
+<h1>BABI</h1>
+
+<div class="hero-subtitle">
+Happy 7th Monthsary
+</div>
+
+<p class="hero-description">
+
+Seven months.
+Countless little moments.
+And somehow, I still find new reasons
+to fall for you.
+
+</p>
+
+<div class="scroll">
+Scroll to discover
+
+<span>↓</span>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- LOVE LETTER -->
+
+<section>
+
+<div class="letter-section">
+
+<div class="section-label">
+01 — A letter for you
+</div>
+
+<div class="section-title">
+Something I wanted<br>
+you to know.
+</div>
+
+<div class="letter-card">
+
+<div class="letter">
+
+BABI,
+
+<br><br>
+
+I don't think I can perfectly put into words
+what these seven months mean to me.
+
+But if I could describe them,
+I'd say they feel like finding a favorite place
+I never want to leave.
+
+Thank you for the conversations,
+the laughter, the random moments,
+the little things you probably don't even realize
+I remember.
+
+Seven months have passed,
+and if I had the chance to start everything again...
+
+I would still choose you.
+
+</div>
+
+<div class="signature">
+— Yours, always ♡
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COUNTER -->
+
+<section class="counter-section">
+
+<div class="section-label">
+02 — Us
+</div>
+
+<div class="section-title">
+Seven months.<br>
+One story.
+</div>
+
+<div class="counter">
+
+<div class="counter-item">
+<div class="number">7</div>
+<p>Months</p>
+</div>
+
+<div class="counter-item">
+<div class="number">∞</div>
+<p>Memories</p>
+</div>
+
+<div class="counter-item">
+<div class="number">1</div>
+<p>Favorite person</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section>
+
+<div class="memories">
+
+<div class="section-label">
+03 — Little moments
+</div>
+
+<div class="section-title">
+The moments<br>
+I keep.
+</div>
+
+<div class="memory-grid">
+
+<div class="memory">
+
+<div class="memory-content">
+
+<div class="memory-number">01</div>
+
+<h3>The beginning</h3>
+
+</div>
+
+</div>
+
+
+<div class="memory">
+
+<div class="memory-content">
+
+<div class="memory-number">02</div>
+
+<h3>Our little world</h3>
+
+</div>
+
+</div>
+
+
+<div class="memory">
+
+<div class="memory-content">
+
+<div class="memory-number">03</div>
+
+<h3>Still choosing you</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REASONS -->
+
+<section>
+
+<div class="reasons">
+
+<div class="section-label">
+04 — Reasons
+</div>
+
+<div class="section-title">
+Things I love<br>
+about you.
+</div>
+
+<div class="reason-grid">
+
+<div class="reason">
+
+<span>01</span>
+
+<h3>Your smile</h3>
+
+<p>
+Somehow it can make an ordinary
+day feel completely different.
+</p>
+
+</div>
+
+
+<div class="reason">
+
+<span>02</span>
+
+<h3>Your presence</h3>
+
+<p>
+Even when we're doing nothing,
+having you around makes everything better.
+</p>
+
+</div>
+
+
+<div class="reason">
+
+<span>03</span>
+
+<h3>The little things</h3>
+
+<p>
+The small moments with you are
+the ones I end up remembering the most.
+</p>
+
+</div>
+
+
+<div class="reason">
+
+<span>04</span>
+
+<h3>Being yourself</h3>
+
+<p>
+I love the person you are,
+not some perfect version of you.
+</p>
+
+</div>
+
+
+<div class="reason">
+
+<span>05</span>
+
+<h3>Our story</h3>
+
+<p>
+It's ours. It's imperfect, unexpected,
+and that's what makes it special.
+</p>
+
+</div>
+
+
+<div class="reason">
+
+<span>06</span>
+
+<h3>Simply you</h3>
+
+<p>
+Out of everyone in this world,
+I'm grateful that I found you.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+<div class="final-content">
+
+<div class="section-label">
+05 — One last thing
+</div>
+
+<h2>
+I'd choose<br>
+you again.
+</h2>
+
+<p>
+
+Seven months down.
+
+And if life gives me the choice
+a thousand more times,
+
+I hope every version of me
+still finds you.
+
+</p>
+
+<a href="#" class="love-button"
+onclick="showMessage(); return false;">
+
+One little surprise ♡
+
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+Made with love for BABI · 7 months ♡
+
+</footer>
+
+
+<script>
+
+function showMessage() {
+
+    alert(
+        "BABI ❤️\n\n" +
+        "If you ever wonder how much you mean to me...\n\n" +
+        "the answer is more than I know how to explain.\n\n" +
+        "Happy 7th Monthsary.\n\n" +
+        "I love you. ♡"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
